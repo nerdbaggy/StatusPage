@@ -7,7 +7,7 @@ $apikey = "Your-API-Key";
 $websitename = "My Uptime Report";
 
 //How often the page should refresh
-$pagerefreshtime = "02:00";
+$pagerefreshtime = "05:00";
 
 //On the status page what percentage is what color
 $percentGreen = 99;
