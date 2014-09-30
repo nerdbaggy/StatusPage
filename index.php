@@ -48,14 +48,14 @@ include 'config.php';
 
   <div class="row">
   <span data-tooltip aria-haspopup="true" class="has-tip" title="Powered by PublicStatusPage">
-  <a href="https://github.com/nerdbaggy/UptimeRobotPublicStatusPage"><i class="fi-social-github"></i></a>
+  <a href="https://github.com/nerdbaggy/StatusPage"><i class="fi-social-github"></i></a>
 </span>
   </div>
 
   <div id="myModal" class="reveal-modal small" data-reveal>
   </div>
 
-  <script src="js/vendor/jquery.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="js/foundation.min.js"></script>
   <script>
   $(document).foundation();
