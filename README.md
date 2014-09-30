@@ -15,7 +15,7 @@ Requirements
 
 Installation
 ==============================
-To install UptimeRobot Public Status Page just clone or download this repo, and place in a web accessable folder. Then edit the config.php to fit your needs. Thats it!
+To install UptimeRobot Public Status Page just clone or download this repo, and place in a web accessable folder. Then edit the config.php in the includes folder to fit your needs. Thats it!
 
 How to configure
 ==============================
