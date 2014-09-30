@@ -1,5 +1,5 @@
 <?php
-include '../config.php';
+include 'config.php';
 include 'statuspage.php';
 $cid =$_GET["cid"];
 
