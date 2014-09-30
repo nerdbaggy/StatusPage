@@ -19,7 +19,7 @@ To install UptimeRobot Public Status Page just clone or download this repo, and 
 
 How to configure
 ==============================
-All confiuration is done in config.php along with an explanation of what each config option does.
+All confiuration is done in config.php which is inside the includes folder, along with an explanation of what each config option does.
 
 Whats included in this release?
 ==============================
