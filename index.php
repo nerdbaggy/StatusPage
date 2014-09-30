@@ -1,23 +1,17 @@
-<?php
-include 'includes/config.php';
-?>
+<?php include 'includes/config.php'; ?>
 <!DOCTYPE html>
 <!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
 <html class="no-js" lang="en" >
-
 <head>
-  <meta charset="utf-8">
-  <!-- If you delete this meta tag World War Z will become a reality -->
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php echo $websitename; ?></title>
-
   <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/foundation.min.css">
   <link rel="stylesheet" href="css/app.css">
   <!-- If you are using the gem version, you need this only -->
   <link rel="stylesheet" href="css/foundation-icons.css">
-
   <script src="js/vendor/modernizr.js"></script>
 </head>
 <body>
@@ -45,16 +39,13 @@ include 'includes/config.php';
       </div>
     </div>
   </div>
-
   <div class="row">
   <span data-tooltip aria-haspopup="true" class="has-tip" title="Powered by PublicStatusPage">
   <a href="https://github.com/nerdbaggy/StatusPage"><i class="fi-social-github"></i></a>
-</span>
+  </span>
   </div>
-
-  <div id="myModal" class="reveal-modal small" data-reveal>
-  </div>
-
+  <div id="myModal" class="reveal-modal small" data-reveal></div>
+  <!-- JS -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="js/foundation.min.js"></script>
   <script>
@@ -89,6 +80,5 @@ include 'includes/config.php';
    setTimeout(update, 1000);
  });
   </script>
-
-
 </body>
+</html>
