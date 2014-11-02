@@ -19,6 +19,7 @@ class StatusPage
 
 		foreach ($checks[monitors][monitor] as $key => $check) {
 			$newCheck = new Check();
+			$newCheck->setID($check[id]);
 			$newCheck->setName($check[friendlyname]);
 			$newCheck->setStaus($check[status]);
 			$newCheck->setUptimeRatios(explode("-", $check[customuptimeratio]));
