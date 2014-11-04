@@ -93,7 +93,7 @@
 					var ts = temp[0].split(":");
 					$timer.html(ts[1]+":"+ts[2]);
 					if((ts[1]==="00") &&(ts[2]==="00")){
-						$("#reload").load("includes/checks.php");
+						$("#reload").load("StatusPage/Ajax.php");
 						$timer.html("<?php echo $pagerefreshtime?>");
 						setTimeout(update, 1000);
 					}
