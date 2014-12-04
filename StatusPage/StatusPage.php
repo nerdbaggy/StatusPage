@@ -34,7 +34,7 @@ class StatusPage
 
 	private function curlIt()
 	{
-		$url = "http://api.uptimerobot.com/getMonitors?apikey=$this->apiKey&format=json&logs=1&customUptimeRatio=$this->historyDay&noJsonCallback=1&showTimezone=1";
+		$url = "https://api.uptimerobot.com/getMonitors?apikey=$this->apiKey&format=json&logs=1&customUptimeRatio=$this->historyDay&noJsonCallback=1&showTimezone=1";
 		$curl = curl_init();
 		curl_setopt_array($curl, array(
 			CURLOPT_RETURNTRANSFER => 1,
