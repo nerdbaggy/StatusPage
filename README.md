@@ -5,7 +5,7 @@ UptimeRobot Public Status Page
 - Uptime % for Day, Week, Month, Year, Total Check Time (Customizable)
 - Exclude certain checks from displaying
 - Check log history
-- Set notification along with color (Customizable)
+- Set notification along with color (Green, Yellow, Blue, Red, Grey)
 - Mobile friendly
 
 ![alt tag](http://i.imgur.com/zlW351v.png)
