@@ -13,7 +13,7 @@ if (!$checks){
 }else{
 	?>
 
-	<h2>Uptime Report</h2>
+	<h4>Uptime Report</h4>
 	<table style="width: 100%;">
 		<thead>
 			<tr>

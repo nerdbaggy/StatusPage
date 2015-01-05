@@ -21,7 +21,6 @@
 		<link rel="stylesheet" href="includes/css/foundation.min.css">
 		<link rel="stylesheet" href="includes/css/app.css">
 		<link rel="stylesheet" href="includes/css/foundation-icons.css">
-		<script src="includes/js/vendor/modernizr.js"></script>
 	</head>
 	<body>
 		<nav class="top-bar" data-topbar role="navigation">
@@ -39,6 +38,7 @@
 				<ul class="left">
 					<!-- Twitter Nav Bar Link -->
 					<?php
+					
 					if ($showTwitter)
 					{
 						echo "<li><a href=$twitterURL><i class=\"fi-social-twitter\"></i> $twitterTitle</a></li>";
@@ -66,9 +66,15 @@
 			</div>
 		</div>
 
-		<div class="row">
-			<p><a href="https://github.com/nerdbaggy/StatusPage"><i class="fi-social-github"></i> Powered By OpenStatusPage <a></p>
-		</div>
+		<?php
+			if ($showFooter){
+				echo '<div class="row">';
+				echo '<p><a href="https://github.com/nerdbaggy/StatusPage"><i class="fi-social-github"></i> Powered By StatusPage </a></p>';
+				echo '</div>';
+			}
+
+		?>
+	
 
 		<div id="logs" class="reveal-modal small" data-reveal></div>
 
@@ -77,8 +83,6 @@
 		<script src="includes/js/foundation.min.js"></script>
 		<script>
 			$(document).foundation();
-		</script>
-		<script>
 		//Refresh page JS
 			$(document).ready(function (e) {
 				var $timer = $("#timetill");

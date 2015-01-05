@@ -1,6 +1,6 @@
 <?php
 //Uptime Robot API Key
-$apiKey = 'Your-API-KEY';
+$apiKey = 'Your-API-Key';
 
 //Text to display on Nav Bar and page title
 $websitename = 'Status Page';
@@ -35,4 +35,6 @@ $excludedChecks = array();
 $showTwitter = False;
 $twitterURL = 'https://twitter.com/nerdbaggy';
 $twitterTitle = 'Status Twitter';
-?>
+
+//You can remove the Powered By OpenStatusPage, but I might cry!
+$showFooter = True;

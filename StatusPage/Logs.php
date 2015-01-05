@@ -21,7 +21,7 @@ function timeChange($tsstart, $stend, $timezone = 0)
 	return "<td>$hours Hrs, $minutes Mins</td>";
 }
 
-$StatusPage = new NerdBaggy\StatusPage($apiKey, $historyDay, $cacheDir, $cacheFile, $cacheTime);
+$StatusPage = new NerdBaggy\StatusPage($apiKey, $historyDay);
 $checks = $StatusPage->getChecks();
 if (!$checks){
 	echo "<div data-alert class=\"alert-box alert radius\">";
@@ -45,21 +45,21 @@ if (!$checks){
 				$logs = $checks[$cid]->getLogs();
 				foreach ($logs as $key => $log) {
 					echo "<tr>";
-					if ($log[type] == 1){
+					if ($log['type'] == 1){
 						echo "<td><div class=\"alert label radius\"><i class=\"fi-arrow-down\"></i> Down</div></td>";
-					}elseif ($log[type] == 2) {
+					}elseif ($log['type'] == 2) {
 						echo "<td><div class=\"success label radius\"><i class=\"fi-arrow-up\"></i> Up</div></td>";
-					}elseif ($log[type] == 98) {
+					}elseif ($log['type'] == 98) {
 						echo "<td><div class=\"secondary label radius\"><i class=\"fi-play\"></i> Started</div></td>";
-					}elseif ($log[type] == 99) {
+					}elseif ($log['type'] == 99) {
 						echo "<td><div class=\"secondary label radius\"><i class=\"fi-pause\"></i> Paused</div></td>";
 					}
 					echo "<td>$log[datetime]</td>";
 
 					if ($key == 0){
-						echo timeChange(date('d-n-Y H:i:s'), $log[datetime], $checks[$cid]->getTZ());
+						echo timeChange(date('d-n-Y H:i:s'), $log['datetime'], $checks[$cid]->getTZ());
 					}else {
-						echo timeChange($logs[$key-1][datetime], $log[datetime]);
+						echo timeChange($logs[$key-1]['datetime'], $log['datetime']);
 					}
 					echo "</tr>";
 				}
