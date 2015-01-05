@@ -42,13 +42,17 @@ class StatusPage
 			CURLOPT_USERAGENT => 'UptimeRobot Public Status Page',
 			CURLOPT_CONNECTTIMEOUT => 400
 		));
-		$checks = json_decode(curl_exec($curl),TRUE);
-		curl_close($curl);
-
-		//Checks to make sure curl is happy
-		if(curl_errno($curl)){
+		
+		if( ! $result = curl_exec($curl)) 
+		{	 
+        		trigger_error(curl_error($ch)); 
 			return False;
-		}
+		}	 
+		
+		curl_close($curl);
+		
+		$checks = json_decode($result,TRUE);
+	
 
 		//Checks to make sure UptimeRobot didn't return any errors
 		if ($checks[stat] != 'ok'){
