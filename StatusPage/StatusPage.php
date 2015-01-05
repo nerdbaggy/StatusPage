@@ -45,8 +45,8 @@ class StatusPage
 		
 		if( ! $result = curl_exec($curl)) 
 		{	 
-        trigger_error(curl_error($ch)); 
-		return False;
+        		trigger_error(curl_error($ch)); 
+			return False;
 		}	 
 		
 		curl_close($curl);
