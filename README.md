@@ -1,6 +1,6 @@
 UptimeRobot Public Status Page
 ==============================
-
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=SpencerL&url=https://github.com/nerdbaggy/StatusPage&title=StatusPage&language=&tags=github&category=software) 
 - Current check status
 - Uptime % for Day, Week, Month, Year, Total Check Time (Customizable)
 - Exclude certain checks from displaying
