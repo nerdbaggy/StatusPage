@@ -49,7 +49,7 @@ if (!$checks){
 					foreach ($check->getUptimeRatios() as $uptimeratio) {
 						if ($uptimeratio >= $percentGreen){
 							echo "<td class=\"green text-center hide-for-small-only\">$uptimeratio%</td>";
-						}elseif ($check->getUptimeRatios() >= $percentYellow) {
+						}elseif ($uptimeratio >= $percentYellow) {
 							echo "<td class=\"yellow text-center hide-for-small-only\">$uptimeratio%</td>";
 						}else{
 							echo "<td class=\"red text-center hide-for-small-only\">$uptimeratio%</td>";
