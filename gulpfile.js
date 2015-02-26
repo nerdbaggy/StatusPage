@@ -1,25 +1,24 @@
-var gulp = require('gulp');
-var mainBowerFiles = require('main-bower-files');
-var handlebars = require('gulp-handlebars');
-var wrap = require('gulp-wrap');
-var declare = require('gulp-declare');
-var concat = require('gulp-concat');
-var filter = require('gulp-filter');
-var uglify = require('gulp-uglify');
-var less = require('gulp-less');
-var minifyCSS = require('gulp-minify-css');
-var runSequence = require('run-sequence');
-var del = require('del');
-var dest = 'build/';
+var gulp = require('gulp'),
+mainBowerFiles = require('main-bower-files'),
+handlebars = require('gulp-handlebars'),
+wrap = require('gulp-wrap'),
+declare = require('gulp-declare'),
+concat = require('gulp-concat'),
+filter = require('gulp-filter'),
+uglify = require('gulp-uglify'),
+less = require('gulp-less'),
+minifyCSS = require('gulp-minify-css'),
+del = require('del'),
+dest = 'build/';
 
 gulp.task('templates', function(){
 	return gulp.src(['js/app/templates/table.hbs', 'js/app/templates/logs.hbs'])
 	.pipe(handlebars())
 	.pipe(wrap('Handlebars.template(<%= contents %>)'))
 	.pipe(declare({
-      namespace: 'StatusPage.templates',
+		namespace: 'StatusPage.templates',
       noRedeclare: true, // Avoid duplicate declarations 
-    }))
+  }))
 	.pipe(concat('templates.js'))
 	.pipe(gulp.dest('js/app/'));
 });
@@ -62,7 +61,7 @@ gulp.task('less', function() {
 });
 
 gulp.task('clean', function(cb) {
-  del(['build'], cb);
+	del(['build'], cb);
 });
 
 gulp.task('default', ['jsCombine', 'icons', 'html', 'less', 'php']);
