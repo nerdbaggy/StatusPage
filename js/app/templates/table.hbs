@@ -1,0 +1,24 @@
+          <table class="table table-striped table-hover">
+
+<thead>
+                <tr>
+                    <th>Name</th>
+		<th class="text-center">Status</th>
+                    {{#each headers}}
+							<th class="text-center hidden-xs">{{this}}</th>
+					{{/each}}
+                </tr>
+            </thead>
+            <tbody>
+            {{#each checks}}
+                <tr>
+                    <td class="text-left" >{{name}} <i class="fa fa-bars hidden-xs" data-cid="{{@index}}"></i> <i class="fa fa-line-chart hidden-xs" data-cid="{{@index}}" data-toggle="modal" data-target="#latencyModal"></i></td>
+                    <td class="text-center"><div class="text-{{status.color}}">{{status.status}}</div></td>
+                    {{#each customuptime}}
+                        <td class="text-center hidden-xs"><div class="text-{{color}}">{{percent}}%</div></td>
+                    {{/each}}
+                    <td class="text-center hidden-xs"><div class="text-{{allUpTime.color}}">{{allUpTime.percent}}%</div></td>
+                </tr>
+            {{/each}}
+            </tbody>
+

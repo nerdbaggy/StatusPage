@@ -1,4 +1,6 @@
-config.php
 sftp-config.json
 StatusPage.sublime-project
 *.sublime-workspace
+bower_components
+node_modules
+.DS_Store
