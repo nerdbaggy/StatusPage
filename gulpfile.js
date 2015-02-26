@@ -43,7 +43,7 @@ gulp.task('icons', function() {
 });
 
 gulp.task('php', function() {
-	return gulp.src('backend/statuspage/*')
+	return gulp.src('backend/statuspage/**/**/*')
 	.pipe(gulp.dest(dest + 'statuspage'));
 });
 
