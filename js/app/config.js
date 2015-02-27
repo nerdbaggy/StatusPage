@@ -24,6 +24,6 @@ var config = {
         //The color of the alert bar. Available colors can be seen http://getbootstrap.com/components/#alerts
         alertColor: 'success',
 
-        //I guess you can hide the footer, but it would make me sad :()
+        //I guess you can hide the footer, but it would make me sad :(
         showFooter: true,
     };
