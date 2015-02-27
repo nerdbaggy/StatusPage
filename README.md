@@ -1,4 +1,4 @@
-StatusPage
+StatusPage ![](https://api.travis-ci.org/nerdbaggy/StatusPage.svg?branch=v3)
 -------
 
 - Current check status
