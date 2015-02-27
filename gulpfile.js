@@ -31,7 +31,7 @@ gulp.task('vendors', function() {
 });
 
 gulp.task('jsCombine', ['vendors', 'templates'], function() {
-	return gulp.src(['js/app/vendors.js', 'js/app/main.js', 'js/app/templates.js', 'js/app/config.js'])
+	return gulp.src(['js/app/vendors.js', 'js/app/main.js', 'js/app/templates.js'])
 	.pipe(concat('statuspage.js'))
 	.pipe(uglify())
 	.pipe(gulp.dest('js/app/'));
@@ -40,7 +40,6 @@ gulp.task('jsCombine', ['vendors', 'templates'], function() {
 gulp.task('jsConfig', ['jsCombine'], function() {
 	return gulp.src(['js/app/config.js', 'js/app/statuspage.js'])
 	.pipe(concat('statuspage.min.js'))
-	//.pipe(uglify())
 	.pipe(gulp.dest(dest + 'js'));
 });
 
