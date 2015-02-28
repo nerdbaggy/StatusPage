@@ -1,6 +1,8 @@
 StatusPage ![](https://api.travis-ci.org/nerdbaggy/StatusPage.svg?branch=v3)
 -------
 
+[Live Example](http://statuspage.spencerl.com/)
+
 - Current check status
 - Uptime % for Day, Week, Month, Year, Total Check Time (Customizable)
 - Exclude/Include certain checks
