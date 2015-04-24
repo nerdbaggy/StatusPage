@@ -1,5 +1,8 @@
-StatusPage [![Build Status](https://travis-ci.org/nerdbaggy/StatusPage.svg?branch=v3)](https://travis-ci.org/nerdbaggy/StatusPage) [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/nerdbaggy/StatusPage/tree/v3)
+StatusPage  [![Build Status](https://travis-ci.org/nerdbaggy/StatusPage.svg?branch=v3)](https://travis-ci.org/nerdbaggy/StatusPage) 
 ============= 
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/nerdbaggy/StatusPage/tree/v3)
+
 
 -------
 
