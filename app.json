@@ -1,15 +1,15 @@
 {
-  "name": "StatusPage",
-  "description": "UptimeRobot StatusPage",
-  "keywords": [
-    "UptimeRobot",
-    "StatusPage",
-    "Uptime",
-    "Robot"
-  ],
-  "website": "https://github.com/nerdbaggy/StatusPage",
-  "repository": "https://github.com/nerdbaggy/StatusPage",
-  "env": {
-    "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-php",
-  },
+    "name": "StatusPage",
+    "description": "UptimeRobot StatusPage",
+    "keywords": [
+        "UptimeRobot",
+        "StatusPage",
+        "Uptime",
+        "Robot"
+    ],
+    "website": "https://github.com/nerdbaggy/StatusPage",
+    "repository": "https://github.com/nerdbaggy/StatusPage",
+    "env": {
+        "BUILDPACK_URL": "https://github.com/heroku/heroku-buildpack-php"
+    }
 }
