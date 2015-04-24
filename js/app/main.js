@@ -33,7 +33,7 @@ $( document ).ready(function() {
             data: data,
             timeout: 7000,
             error: (function(e) {
-                resultsPlaceholder.html('<h4>An error has occured</h4>  <i class="fa fa-frown-o fa-3x"></i>');
+                resultsPlaceholder.html('<h4>An error has occurred</h4>  <i class="fa fa-frown-o fa-3x"></i>');
             }),
             success: function(json) {
                 var allChecks = [];
