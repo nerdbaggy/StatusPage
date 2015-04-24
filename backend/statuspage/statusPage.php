@@ -82,7 +82,7 @@ class statusPage
 
             $tempCheck = array(
                 'id' => $check['id'],
-                'name' => $check['friendlyname'],
+                'name' => html_entity_decode($check['friendlyname']),
                 'type' => $check['type'],
                 'interval' => $check['interval'],
                 'status' => $check['status'],
