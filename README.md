@@ -4,8 +4,6 @@ StatusPage  [![Build Status](https://travis-ci.org/nerdbaggy/StatusPage.svg?bran
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/nerdbaggy/StatusPage/tree/v3)
 
 
--------
-
 [Live Example](http://statuspage.spencerl.com/)
 
 - Current check status
