@@ -1,5 +1,6 @@
-StatusPage ![](https://api.travis-ci.org/nerdbaggy/StatusPage.svg?branch=v3)
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/nerdbaggy/StatusPage/tree/v3)
+StatusPage ![](https://api.travis-ci.org/nerdbaggy/StatusPage.svg?branch=v3) [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/nerdbaggy/StatusPage/tree/v3)
+============= 
+
 -------
 
 [Live Example](http://statuspage.spencerl.com/)
