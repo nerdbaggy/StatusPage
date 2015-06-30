@@ -16,5 +16,9 @@ define('cacheTime', 300);
 //Only show these monitors
 define('includedMonitors', '');
 
+
+//Show monitors matching search
+define('searchMonitors', '');
+
 //Hide certain monitors
 define('excludedMonitors', serialize(array()));
