@@ -11,13 +11,20 @@ minifyCSS = require('gulp-minify-css'),
 del = require('del'),
 dest = 'build/';
 
+gulp.task('watch', function() {
+  gulp.watch("html/*", ['html']);
+  gulp.watch("js/app/config.js", ['js-config']);
+	gulp.watch("backend/statuspage/**/**/*", ['php']);
+});
+
+
 gulp.task('templates', function(){
 	return gulp.src(['js/app/templates/table.hbs', 'js/app/templates/logs.hbs'])
 	.pipe(handlebars())
 	.pipe(wrap('Handlebars.template(<%= contents %>)'))
 	.pipe(declare({
 		namespace: 'StatusPage.templates',
-      noRedeclare: true, // Avoid duplicate declarations 
+      noRedeclare: true, // Avoid duplicate declarations
   }))
 	.pipe(concat('templates.js'))
 	.pipe(gulp.dest('js/app/'));
