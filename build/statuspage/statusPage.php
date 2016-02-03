@@ -20,15 +20,17 @@ class statusPage
         }
 
         $needsUpdated = false;
-        foreach ($allChecks as $key => $cid) {
-            $allCheckInfo[] = $cache->get('statuspage-' . $cid);
-            if (count($allCheckInfo[0]['log']) === 0 && $action === 'update'){
-                $needsUpdated = true;
-                unset($allCheckInfo);
-                break;
-            }
-        }
-
+		if(count($allChecks)){
+			foreach ($allChecks as $key => $cid) {
+				$allCheckInfo[] = $cache->get('statuspage-' . $cid);
+				if (count($allCheckInfo[0]['log']) === 0 && $action === 'update'){
+					$needsUpdated = true;
+					unset($allCheckInfo);
+					break;
+				}
+			}
+		}
+		
         if ($needsUpdated){
             $this->updateCache(true);
             
@@ -46,56 +48,58 @@ class statusPage
         $checksArray      = $this->getChecksJson($action);
         $excludedMonitors = unserialize(constant('excludedMonitors'));
         
-        foreach ($checksArray['monitors']['monitor'] as $key => $check) {
-            if (!in_array($check['id'], $excludedMonitors)) {
-                
-                
-                $allCheckID[]       = $check['id'];
-                $fixedResponseTimes = array();
-                $fixedEventTime = array();
+		if(count($checksArray['monitors']['monitor'])){
+			foreach ($checksArray['monitors']['monitor'] as $key => $check) {
+				if (!in_array($check['id'], $excludedMonitors)) {
+					
+					
+					$allCheckID[]       = $check['id'];
+					$fixedResponseTimes = array();
+					$fixedEventTime = array();
 
-                if (is_array($check['responsetime'])) {
-                    
-                    foreach ($check['responsetime'] as $key => $restime) {
-                        $fixedResponseTimes[] = array(
-                            'datetime' => date("Y-m-d G:i:s", strtotime($restime['datetime'])),
-                            'value' => $restime['value']
-                            );
-                    }
+					if (is_array($check['responsetime'])) {
+						
+						foreach ($check['responsetime'] as $key => $restime) {
+							$fixedResponseTimes[] = array(
+								'datetime' => date("Y-m-d G:i:s", strtotime($restime['datetime'])),
+								'value' => $restime['value']
+								);
+						}
 
-                }
+					}
 
-                if (!is_null($check['log'])){
-
-
-
-                   foreach ($check['log'] as $key => $dt) {
-                    $fixedEventTime[] = array(
-                        'actualTime' => $dt['datetime'],
-                        'type' => $dt['type'],
-                        'datetime' => strtotime($dt['datetime'])
-                        );
-                }
-
-            }
+					if (!is_null($check['log'])){
 
 
-            $tempCheck = array(
-                'id' => $check['id'],
-                'name' => html_entity_decode($check['friendlyname']),
-                'type' => $check['type'],
-                'interval' => $check['interval'],
-                'status' => $check['status'],
-                'allUpTimeRatio' => $check['alltimeuptimeratio'],
-                'customUptimeRatio' => explode("-", $check['customuptimeratio']),
-                'log' => $fixedEventTime,
-                'responseTime' => $fixedResponseTimes,
-                'timezone' => intval($checksArray['timezone']),
-                'currentTime' => time() + (intval($checksArray['timezone']))* 60
-                );
-            $cache->set('statuspage-' . $check['id'], $tempCheck, constant('cacheTime'));
-        }
-    }
+
+					   foreach ($check['log'] as $key => $dt) {
+						$fixedEventTime[] = array(
+							'actualTime' => $dt['datetime'],
+							'type' => $dt['type'],
+							'datetime' => strtotime($dt['datetime'])
+							);
+					}
+
+				}
+
+
+				$tempCheck = array(
+					'id' => $check['id'],
+					'name' => html_entity_decode($check['friendlyname']),
+					'type' => $check['type'],
+					'interval' => $check['interval'],
+					'status' => $check['status'],
+					'allUpTimeRatio' => $check['alltimeuptimeratio'],
+					'customUptimeRatio' => explode("-", $check['customuptimeratio']),
+					'log' => $fixedEventTime,
+					'responseTime' => $fixedResponseTimes,
+					'timezone' => intval($checksArray['timezone']),
+					'currentTime' => time() + (intval($checksArray['timezone']))* 60
+					);
+				$cache->set('statuspage-' . $check['id'], $tempCheck, constant('cacheTime'));
+			}
+		}
+	}
     $cache->set('statuspage-allChecks', $allCheckID, constant('cacheTime'));
 }
 
@@ -128,7 +132,12 @@ private function getChecksJson($action)
     if (constant('includedMonitors') != '') {
         $monitors = constant('includedMonitors');
         $url .= "&monitors=$monitors";
-    }
+ 	}
+	
+    if (constant('searchMonitors') != '') {
+        $search = constant('searchMonitors');
+        $url .= "&search=$search";
+ 	}
     
     $curl = curl_init();
     curl_setopt_array($curl, array(
