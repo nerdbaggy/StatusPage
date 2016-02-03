@@ -4,7 +4,7 @@ StatusPage  [![Build Status](https://travis-ci.org/nerdbaggy/StatusPage.svg?bran
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/nerdbaggy/StatusPage/tree/v3)
 
 
-[Live Example](http://status.spencerl.com/)
+[Live Example](http://projects.spencerl.com/statuspage/)
 
 - Current check status
 - Uptime % for Day, Week, Month, Year, Total Check Time (Customizable)
