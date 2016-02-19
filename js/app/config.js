@@ -25,5 +25,5 @@ var config = {
         alertColor: 'success',
 
         //I guess you can hide the footer, but it would make me sad :(
-        showFooter: true,
+        showFooter: true
     };

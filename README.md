@@ -24,7 +24,7 @@ How to install
 -----
 1. Download the latest StatusPage_Public.zip from [here](https://github.com/nerdbaggy/StatusPage/releases/latest)
 2. Unzip the file and place all the contents in your web folder.
-3. Edit the config file in statuspage/config.php with your UptimeRobot API Key
+3. Copy the ``statuspage/config-sample.php`` to ``statuspage/config.php`` and insert your UptimeRobot API Key 
 4. That's it! View the index.html with your webrowser and see your uptime!
 
 How to customize

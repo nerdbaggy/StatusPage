@@ -4,3 +4,4 @@ StatusPage.sublime-project
 bower_components
 node_modules
 .DS_Store
+build/statuspage/config.php
