@@ -26,4 +26,15 @@ var config = {
 
         //I guess you can hide the footer, but it would make me sad :(
         showFooter: true,
+
+        /* Manually set the order in which to display each monitor
+           
+           To use it set desiredOrder to be an object where the keys are the uptimeRobot ids 
+           and the values are comparable using the > operator
+           eg: { '3736363636': 0, 
+                 '2474744747': 1, 
+                  ...
+        */
+        desiredOrder: undefined
+
     };
