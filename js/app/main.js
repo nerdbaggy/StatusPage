@@ -41,6 +41,12 @@ $( document ).ready(function() {
                     allChecks.push(prettifyCode(obj));
                 });
 
+                if (config.desiredOrder) {
+                    allChecks.sort(function(a,b) {
+                        return config.desiredOrder[a.id] > config.desiredOrder[b.id] ? 1 : -1;
+                    });
+                }
+
                 pageInfo = {
                     checks: allChecks,
                     headers: json.headers
