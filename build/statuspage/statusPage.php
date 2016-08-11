@@ -7,6 +7,7 @@ class statusPage
     public function getChecks($action = null)
     {
         $cache = phpFastCache();
+        $allCheckInfo = array();
         
         $allChecks = $cache->get('statuspage-allChecks');
         if ($allChecks === null) {
@@ -47,6 +48,7 @@ class statusPage
         $cache            = phpFastCache();
         $checksArray      = $this->getChecksJson($action);
         $excludedMonitors = unserialize(constant('excludedMonitors'));
+        $allCheckID       = array();
         
 		if(count($checksArray['monitors']['monitor'])){
 			foreach ($checksArray['monitors']['monitor'] as $key => $check) {
@@ -57,7 +59,7 @@ class statusPage
 					$fixedResponseTimes = array();
 					$fixedEventTime = array();
 
-					if (is_array($check['responsetime'])) {
+					if (isset($check['responsetime']) && is_array($check['responsetime'])) {
 						
 						foreach ($check['responsetime'] as $key => $restime) {
 							$fixedResponseTimes[] = array(
@@ -68,9 +70,7 @@ class statusPage
 
 					}
 
-					if (!is_null($check['log'])){
-
-
+					if (isset($check['log']) && !is_null($check['log'])){
 
 					   foreach ($check['log'] as $key => $dt) {
 						$fixedEventTime[] = array(
@@ -92,10 +92,14 @@ class statusPage
 					'allUpTimeRatio' => $check['alltimeuptimeratio'],
 					'customUptimeRatio' => explode("-", $check['customuptimeratio']),
 					'log' => $fixedEventTime,
-					'responseTime' => $fixedResponseTimes,
-					'timezone' => intval($checksArray['timezone']),
-					'currentTime' => time() + (intval($checksArray['timezone']))* 60
+					'responseTime' => $fixedResponseTimes
 					);
+
+				if (isset($check['timezone'])) {
+					$tempCheck['timezone'] = intval($checksArray['timezone']);
+					$tempCheck['currentTime'] = time() + (intval($checksArray['timezone']))* 60;
+				}
+
 				$cache->set('statuspage-' . $check['id'], $tempCheck, constant('cacheTime'));
 			}
 		}
