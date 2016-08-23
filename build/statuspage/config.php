@@ -1,8 +1,14 @@
 <?php
 namespace NerdBaggy\StatusPage;
 
-//Uptime Robot API Key
-define('apiKey', 'Your-API-Key-Here');
+
+if(isset($_ENV['API_KEY'])){
+  define('apiKey', $_ENV['API_KEY']);
+}
+else {
+  //Uptime Robot API Key
+  define('apiKey', 'Your-API-Key-Here');
+}
 
 //Uptime percentage for following days
 define('historyDay', '1-7-30-360');
